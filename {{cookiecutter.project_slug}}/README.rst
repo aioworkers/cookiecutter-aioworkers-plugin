@@ -6,3 +6,21 @@
 
 .. image:: https://img.shields.io/pypi/v/{{cookiecutter.project_slug}}.svg
   :target: https://pypi.python.org/pypi/{{cookiecutter.project_slug}}
+
+
+Development
+-----------
+
+Install dev requirements:
+
+
+.. code-block:: shell
+
+    pipenv install --dev --skip-lock
+
+
+Run tests:
+
+.. code-block:: shell
+
+    pytest

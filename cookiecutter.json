@@ -4,6 +4,5 @@
   "project_package": "{{ cookiecutter.project_slug | replace('-', '_') }}",
   "description": "aioworkers plugin",
   "author_name": "Your name",
-  "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
-  "use_travis": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com"
+  "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com"
 }
