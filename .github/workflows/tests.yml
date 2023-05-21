@@ -48,15 +48,15 @@ jobs:
         run: |
           hatch run lint:ruff check tests
       - name: isort
-        if: ${{ '{{' }} matrix.lint }}
+        if: ${{ matrix.lint }}
         run: |
           hatch run lint:isort -c tests
       - name: black
-        if: ${{ '{{' }} matrix.lint }}
+        if: ${{ matrix.lint }}
         run: |
           hatch run lint:black --check --diff tests
       - name: mypy
-        if: ${{ '{{' }} matrix.lint }}
+        if: ${{ matrix.lint }}
         run: |
           hatch run lint:mypy tests
       - name: Tests
