@@ -46,19 +46,19 @@ jobs:
       - name: ruff
         if: ${{ matrix.lint }}
         run: |
-          hatch run style:ruff check tests
+          hatch run lint:ruff check tests
       - name: isort
         if: ${{ '{{' }} matrix.lint }}
         run: |
-          hatch run style:isort -c tests
+          hatch run lint:isort -c tests
       - name: black
         if: ${{ '{{' }} matrix.lint }}
         run: |
-          hatch run style:black --check --diff tests
+          hatch run lint:black --check --diff tests
       - name: mypy
         if: ${{ '{{' }} matrix.lint }}
         run: |
-          hatch run style:mypy tests
+          hatch run lint:mypy tests
       - name: Tests
         run: |
           hatch run pytest
