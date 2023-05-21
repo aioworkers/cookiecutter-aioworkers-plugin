@@ -29,6 +29,12 @@ features = [
 ]
 
 [tool.hatch.envs.default.scripts]
+init = [
+  "scaraplate rollup . {args}",
+]
+update = [
+  "scaraplate rollup --no-input . {args}",
+]
 test = "pytest {args:tests}"
 test-cov = "coverage run -m pytest {args:tests}"
 cov-report = [
