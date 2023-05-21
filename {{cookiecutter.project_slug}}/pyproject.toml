@@ -115,19 +115,24 @@ check_untyped_defs = true
 [tool.ruff]
 line-length = 120
 
-[tool.hatch.envs.style]
+[tool.hatch.envs.lint]
 features = [
     "dev-lint",
 ]
-[tool.hatch.envs.style.scripts]
-check = [
-    "ruff check {{cookiecutter.project_package}} tests",
-    "isort --check-only --diff {{cookiecutter.project_package}} tests",
-    "black --check --diff {{cookiecutter.project_package}} tests",
-    "mypy {{cookiecutter.project_package}} tests",
+[tool.hatch.envs.lint.scripts]
+typing = "mypy --install-types --non-interactive {args:{{cookiecutter.project_package}} tests}"
+style = [
+    "ruff {args:{{cookiecutter.project_package}} tests}",
+    "isort --check-only --diff {args:{{cookiecutter.project_package}} tests}",
+    "black --check --diff {args:{{cookiecutter.project_package}} tests}",
 ]
 fmt = [
-    "isort {{cookiecutter.project_package}} tests",
-    "black {{cookiecutter.project_package}} tests",
-    "check",
+    "black {args:{{cookiecutter.project_package}} tests}",
+    "isort {args:{{cookiecutter.project_package}} tests}",
+    "ruff --fix {args:{{cookiecutter.project_package}} tests}",
+    "style",
+]
+all = [
+    "style",
+    "typing",
 ]
