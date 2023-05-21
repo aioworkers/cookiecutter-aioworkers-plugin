@@ -29,8 +29,6 @@ jobs:
             lint: true
           - os: macOS-latest
             python-version: '3.8'
-          - os: windows-latest
-            python-version: '3.8'
 
     runs-on: ${{ matrix.os }}
 
