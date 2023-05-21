@@ -68,7 +68,6 @@ features = [
 ]
 [tool.hatch.envs.default.scripts]
 cov = "coverage run -m pytest && coverage report"
-no-cov = "cov --no-cov"
 
 [[tool.hatch.envs.test.matrix]]
 python = [
@@ -89,10 +88,11 @@ addopts = [
 ]
 
 [tool.coverage.run]
-branch = false
+branch = true
 parallel = false
-omit = [
-    "{{cookiecutter.project_package}}/__init__.py",
+source = [
+    "{{cookiecutter.project_package}}",
+    "tests",
 ]
 
 [tool.coverage.report]
