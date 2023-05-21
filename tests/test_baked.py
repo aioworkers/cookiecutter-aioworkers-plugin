@@ -7,4 +7,4 @@ def test_default(cookies, project_checker):
 
     # check files in project
     path = Path(result.project)
-    assert (path / 'README.rst').exists()
+    assert (path / "README.rst").exists()

@@ -3,6 +3,7 @@
   "project_slug": "aioworkers-{{ cookiecutter.project_name.lower() | replace(' ', '-') }}",
   "project_package": "{{ cookiecutter.project_slug | replace('-', '_') }}",
   "description": "aioworkers plugin",
+  "git_branch": "master",
   "author_name": "Your name",
   "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com"
 }

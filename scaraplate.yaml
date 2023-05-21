@@ -1,0 +1,22 @@
+
+git_remote_type: scaraplate.gitremotes.GitHub
+
+cookiecutter_context_type: scaraplate.cookiecutter.ScaraplateConf
+
+default_strategy: scaraplate.strategies.Overwrite
+
+strategies_mapping:
+  .gitignore: scaraplate.strategies.SortedUniqueLines
+
+#  pyproject.toml:
+#    strategy: scaraplate.strategies.SetupCfgMerge
+#    config:
+#      merge_requirements: []
+#      preserve_keys:
+#        - sections: ^project$
+#          keys: ^name$
+#        - sections: ^project$
+#          keys: ^authors$
+#      preserve_sections: []
+
+  "*/__init__.py": scaraplate.strategies.IfMissing
