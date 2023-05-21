@@ -71,11 +71,19 @@ cov = "coverage run -m pytest && coverage report"
 no-cov = "cov --no-cov"
 
 [[tool.hatch.envs.test.matrix]]
-python = ["3.8", "3.9", "3.10", "3.11"]
+python = [
+    "3.8",
+    "3.9",
+    "3.10",
+    "3.11",
+]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
-testpaths = ["tests", "{{cookiecutter.project_package}}"]
+testpaths = [
+    "{{cookiecutter.project_package}}",
+    "tests",
+]
 addopts = [
     "--doctest-modules",
 ]
@@ -96,7 +104,12 @@ exclude_lines = [
 
 [tool.black]
 line-length = 120
-target-version = ["py38", "py39", "py310", "py311"]
+target-version = [
+    "py38",
+    "py39",
+    "py310",
+    "py311",
+]
 
 [tool.isort]
 profile = "black"
