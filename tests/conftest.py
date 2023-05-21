@@ -1,17 +1,17 @@
 import py
 import pytest
 import sh
-from pytest_cookies import Cookies
+from pytest_cookies.plugin import Cookies
 
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope="session")
 def cookies(request, _cookiecutter_config_file):
     # Customize directory to bake projects
     template_dir = request.config.option.template
-    p = py.path.local('tests/projects')
+    p = py.path.local("tests/projects")
     if p.exists():
         p.remove()
-    output_factory = py.path.local('tests').mkdir('projects').mkdir
+    output_factory = py.path.local("tests").mkdir("projects").mkdir
 
     return Cookies(template_dir, output_factory, _cookiecutter_config_file)
 
@@ -23,10 +23,11 @@ def project_checker():
         assert result.exception is None
         assert result.project.isdir()
 
-        # Check project with flake8
+        # Check project with ruff
         try:
-            sh.flake8(str(result.project))
+            sh.ruff(str(result.project))
         except sh.ErrorReturnCode as e:
-            print(e)
+            print(e)  # noqa
             pytest.fail(e)
+
     return check

@@ -1,0 +1,64 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - master
+    tags: [ '*' ]
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  tests:
+    strategy:
+      max-parallel: 7
+      matrix:
+        os:
+          - ubuntu-latest
+        python-version:
+          - '3.9'
+          - '3.10'
+          - '3.11'
+          - pypy-3.8
+          - pypy-3.9
+        include:
+          - os: ubuntu-latest
+            python-version: '3.8'
+            coverage: true
+            lint: true
+          - os: macOS-latest
+            python-version: '3.8'
+          - os: windows-latest
+            python-version: '3.8'
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3.5.2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4.6.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          pip install -U hatch
+      - name: ruff
+        if: ${{ matrix.lint }}
+        run: |
+          hatch run style:ruff check tests
+      - name: isort
+        if: ${{ '{{' }} matrix.lint }}
+        run: |
+          hatch run style:isort -c tests
+      - name: black
+        if: ${{ '{{' }} matrix.lint }}
+        run: |
+          hatch run style:black --check --diff tests
+      - name: mypy
+        if: ${{ '{{' }} matrix.lint }}
+        run: |
+          hatch run style:mypy tests
+      - name: Tests
+        run: |
+          hatch run pytest

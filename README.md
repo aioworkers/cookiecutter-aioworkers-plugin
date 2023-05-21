@@ -2,13 +2,12 @@
 
 Cookiecutter template to create aioworkers plugin.
 
-## Initialize
+## Update plugin
+Plugin must be contained .scaraplate.conf with context params
 
-Install requirements:
-
+Update plugin with template:
 ```bash
-pipenv install --dev --skip-lock
-pipenv shell
+hatch run scaraplate rollup . ../aioworkers-sentry --no-input
 ```
 
 ## Testing
@@ -16,5 +15,17 @@ pipenv shell
 Run tests:
 
 ```bash
-pytest
+hatch run pytest
+```
+
+Run lint:
+
+```bash
+hatch run lint:all
+```
+
+Run format:
+
+```bash
+hatch run lint:fmt
 ```
