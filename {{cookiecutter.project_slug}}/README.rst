@@ -34,11 +34,18 @@
 Development
 -----------
 
+Check code:
+
+.. code-block:: shell
+
+    hatch run lint:all
+
+
 Format code:
 
 .. code-block:: shell
 
-    hatch run style:fmt
+    hatch run lint:fmt
 
 
 Run tests:
