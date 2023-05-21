@@ -136,3 +136,16 @@ all = [
     "style",
     "typing",
 ]
+
+[tool.hatch.envs.template]
+detached = true
+dependencies = [
+    "scaraplate",
+]
+[tool.hatch.envs.template.scripts]
+update = [
+    "scaraplate rollup --no-input {args:../cookiecutter-aioworkers-plugin} ."
+]
+clone = [
+    "git clone https://github.com/aioworkers/cookiecutter-aioworkers-plugin {args:../cookiecutter-aioworkers-plugin}"
+]
