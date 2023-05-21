@@ -51,10 +51,12 @@ features = [
 typing = "mypy --install-types --non-interactive {args:tests}"
 style = [
   "ruff {args:.}",
+  "isort --check-only --diff {args:.}",
   "black --check --diff {args:.}",
 ]
 fmt = [
   "black {args:.}",
+  "isort {args:.}",
   "ruff --fix {args:.}",
   "style",
 ]
