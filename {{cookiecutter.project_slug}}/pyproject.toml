@@ -140,9 +140,9 @@ style = [
     "black --check --diff {args:{{cookiecutter.project_package}} tests}",
 ]
 fmt = [
-    "black {args:{{cookiecutter.project_package}} tests}",
-    "isort {args:{{cookiecutter.project_package}} tests}",
     "ruff --fix {args:{{cookiecutter.project_package}} tests}",
+    "isort {args:{{cookiecutter.project_package}} tests}",
+    "black {args:{{cookiecutter.project_package}} tests}",
     "style",
 ]
 all = [
