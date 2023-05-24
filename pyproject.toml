@@ -11,7 +11,7 @@ dependencies = [
 dev-test = [
   "sh==2.0.4",
   "docker==6.1.2",
-  "coverage[toml]==7.2.5",
+  "coverage[toml]==7.2.6",
   "pytest==7.3.1",
   "pytest-cookies==0.7.0",
 ]
