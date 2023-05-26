@@ -21,3 +21,8 @@ updates:
     directory: ".github/workflows"
     schedule:
       interval: "daily"
+
+  - package-ecosystem: "github-actions"
+    directory: "{{cookiecutter.project_slug}}/.github/workflows"
+    schedule:
+      interval: "daily"
