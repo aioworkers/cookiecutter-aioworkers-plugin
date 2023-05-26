@@ -57,7 +57,7 @@ Source = "https://github.com/aioworkers/{{cookiecutter.project_slug}}"
 [tool.hatch.version]
 path = "{{cookiecutter.project_package}}/__init__.py"
 
-[tool.hatch.build.targets.sdist]
+[tool.hatch.build]
 include = [
     "/{{cookiecutter.project_package}}",
 ]
