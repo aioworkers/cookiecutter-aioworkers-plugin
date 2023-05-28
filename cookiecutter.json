@@ -3,7 +3,14 @@
   "project_slug": "aioworkers-{{ cookiecutter.project_name.lower() | replace(' ', '-') }}",
   "project_package": "{{ cookiecutter.project_slug | replace('-', '_') }}",
   "description": "aioworkers plugin",
-  "git_branch": "master",
+  "development_status": [
+    "Development Status :: 1 - Planning",
+    "Development Status :: 2 - Pre-Alpha",
+    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable"
+  ],
+  "git_branch": ["main", "master"],
   "author_name": "Your name",
   "author_email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
   "python_ci": "3.8",

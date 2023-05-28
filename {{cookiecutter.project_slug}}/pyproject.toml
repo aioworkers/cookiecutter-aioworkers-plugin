@@ -16,7 +16,7 @@ keywords = [
     "aioworkers",
 ]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "{{ cookiecutter.development_status }}",
     "Framework :: AsyncIO",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: Apache Software License",
