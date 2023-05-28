@@ -9,9 +9,11 @@
 
 .. image:: https://codecov.io/gh/aioworkers/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/aioworkers/{{cookiecutter.project_slug}}
+  :alt: Coverage
 
 .. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json
   :target: https://github.com/charliermarsh/ruff
+  :alt: Code style: ruff
 
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
   :target: https://github.com/psf/black
@@ -19,6 +21,7 @@
 
 .. image:: https://img.shields.io/badge/types-Mypy-blue.svg
   :target: https://github.com/python/mypy
+  :alt: Code style: Mypy
 
 .. image:: https://readthedocs.org/projects/{{cookiecutter.project_slug}}/badge/?version=latest
   :target: https://{{cookiecutter.project_slug}}.readthedocs.io/en/latest/?badge=latest
@@ -26,6 +29,7 @@
 
 .. image:: https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}}.svg
   :target: https://pypi.org/project/{{cookiecutter.project_slug}}
+  :alt: Python versions
 
 .. image:: https://img.shields.io/pypi/dm/{{cookiecutter.project_slug}}.svg
   :target: https://pypi.org/project/{{cookiecutter.project_slug}}
