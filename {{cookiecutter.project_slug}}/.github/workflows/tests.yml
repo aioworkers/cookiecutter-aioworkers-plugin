@@ -17,20 +17,20 @@ jobs:
         os:
           - ubuntu-latest
         python-version:
-          - '3.9'
-          - '3.10'
-          - '3.11'
+          {%- for version in (cookiecutter.python_versions | replace(cookiecutter.python_ci + ",", "")).split(",") %}
+          - '{{ version }}'
+          {%- endfor %}
           - pypy-3.8
           - pypy-3.9
         include:
           - os: ubuntu-latest
-            python-version: '3.8'
+            python-version: '{{ cookiecutter.python_ci }}'
             coverage: true
             lint: true
           - os: macOS-latest
-            python-version: '3.8'
+            python-version: '{{ cookiecutter.python_ci }}'
           - os: windows-latest
-            python-version: '3.8'
+            python-version: '{{ cookiecutter.python_ci }}'
 
     runs-on: ${{ '{{' }} matrix.os }}
 

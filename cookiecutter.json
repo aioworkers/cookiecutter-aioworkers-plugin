@@ -5,5 +5,7 @@
   "description": "aioworkers plugin",
   "git_branch": "master",
   "author_name": "Your name",
-  "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com"
+  "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
+  "python_ci": "3.8",
+  "python_versions": "3.7,3.8,3.9,3.10,3.11"
 }
