@@ -24,7 +24,7 @@
   :alt: Code style: Mypy
 
 .. image:: https://readthedocs.org/projects/{{cookiecutter.project_slug}}/badge/?version=latest
-  :target: https://{{cookiecutter.project_slug}}.readthedocs.io/en/latest/?badge=latest
+  :target: {{cookiecutter.docs}}
   :alt: Documentation Status
 
 .. image:: https://img.shields.io/pypi/pyversions/{{cookiecutter.project_slug}}.svg

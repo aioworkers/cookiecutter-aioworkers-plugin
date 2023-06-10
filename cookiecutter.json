@@ -10,6 +10,11 @@
     "Development Status :: 4 - Beta",
     "Development Status :: 5 - Production/Stable"
   ],
+  "docs": [
+    "https://github.com/aioworkers/{{ cookiecutter.project_slug }}#readme",
+    "https://pypi.org/project/{{ cookiecutter.project_slug }}/",
+    "https://{{cookiecutter.project_slug}}.readthedocs.io/en/latest/?badge=latest"
+  ],
   "git_branch": ["main", "master"],
   "author_name": "Your name",
   "author_email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
