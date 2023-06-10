@@ -47,6 +47,9 @@ dev-lint = [
     "mypy==1.3.0",
 ]
 
+[project.entry-points.aioworkers]
+{{cookiecutter.project_name}} = "{{cookiecutter.project_package}}"
+
 [project.urls]
 Homepage = "https://github.com/aioworkers/{{cookiecutter.project_slug}}"
 Documentation = "https://github.com/aioworkers/{{cookiecutter.project_slug}}#readme"
