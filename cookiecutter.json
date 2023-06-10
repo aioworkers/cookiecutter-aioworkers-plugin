@@ -1,5 +1,5 @@
 {
-  "project_name": "Project Name",
+  "project_name": "ProjectName",
   "project_slug": "aioworkers-{{ cookiecutter.project_name.lower() | replace(' ', '-') }}",
   "project_package": "{{ cookiecutter.project_slug | replace('-', '_') }}",
   "description": "aioworkers plugin",
