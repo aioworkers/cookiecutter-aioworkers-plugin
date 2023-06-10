@@ -20,3 +20,4 @@ strategies_mapping:
 #      preserve_sections: []
 
   "*/__init__.py": scaraplate.strategies.IfMissing
+  "tests/test_plugin.py": scaraplate.strategies.IfMissing
