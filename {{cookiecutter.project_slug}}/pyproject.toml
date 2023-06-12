@@ -52,7 +52,7 @@ dev-lint = [
 
 [project.urls]
 Homepage = "https://github.com/aioworkers/{{cookiecutter.project_slug}}"
-Documentation = "https://github.com/aioworkers/{{cookiecutter.project_slug}}#readme"
+Documentation = "{{cookiecutter.docs}}"
 Issues = "https://github.com/aioworkers/{{cookiecutter.project_slug}}/issues"
 Source = "https://github.com/aioworkers/{{cookiecutter.project_slug}}"
 
