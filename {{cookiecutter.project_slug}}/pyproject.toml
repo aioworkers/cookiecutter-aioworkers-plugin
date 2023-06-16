@@ -65,7 +65,6 @@ include = [
 ]
 
 [tool.hatch.envs.default]
-python = "{{ cookiecutter.python_ci }}"
 features = [
     "dev-test",
 ]
@@ -133,6 +132,7 @@ check_untyped_defs = true
 line-length = 120
 
 [tool.hatch.envs.lint]
+python = "{{ cookiecutter.python_ci }}"
 features = [
     "dev-lint",
 ]
