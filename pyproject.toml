@@ -4,7 +4,7 @@ version = "0.0.0"
 requires-python = ">=3.8"
 dependencies = [
   "cookiecutter==2.2.3",
-  "scaraplate==0.4",
+  "scaraplate==0.5",
 ]
 
 [project.optional-dependencies]
