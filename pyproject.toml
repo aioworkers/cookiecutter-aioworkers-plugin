@@ -3,7 +3,7 @@ name = "cookiecutter-aioworkers-plugin"
 version = "0.0.0"
 requires-python = ">=3.8"
 dependencies = [
-  "cookiecutter==2.2.3",
+  "cookiecutter==2.3.0",
   "scaraplate==0.5",
 ]
 
