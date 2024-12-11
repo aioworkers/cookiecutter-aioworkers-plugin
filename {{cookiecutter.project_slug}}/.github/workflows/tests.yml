@@ -15,15 +15,14 @@ jobs:
       max-parallel: 7
       matrix:
         os:
-          - ubuntu-latest
+          - ubuntu-22.04
         python-version:
           {%- for version in (cookiecutter.python_versions | replace(cookiecutter.python_ci + ",", "")).split(",") %}
           - '{{ version }}'
           {%- endfor %}
-          - pypy-3.8
           - pypy-3.9
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             python-version: '{{ cookiecutter.python_ci }}'
             coverage: true
             lint: true
@@ -35,9 +34,9 @@ jobs:
     runs-on: ${{ '{{' }} matrix.os }}
 
     steps:
-      - uses: actions/checkout@v3.5.3
+      - uses: actions/checkout@v4.2.2
       - name: Set up Python ${{ '{{' }} matrix.python-version }}
-        uses: actions/setup-python@v4.7.0
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: ${{ '{{' }} matrix.python-version }}
       - name: Install dependencies
@@ -46,15 +45,7 @@ jobs:
       - name: ruff
         if: ${{ '{{' }} matrix.lint }}
         run: |
-          hatch run lint:ruff check {{cookiecutter.project_package}} tests
-      - name: isort
-        if: ${{ '{{' }} matrix.lint }}
-        run: |
-          hatch run lint:isort -c {{cookiecutter.project_package}} tests
-      - name: black
-        if: ${{ '{{' }} matrix.lint }}
-        run: |
-          hatch run lint:black --check --diff {{cookiecutter.project_package}} tests
+          hatch run lint:style {{cookiecutter.project_package}} tests
       - name: mypy
         if: ${{ '{{' }} matrix.lint }}
         run: |
