@@ -22,7 +22,7 @@ jobs:
           - '3.11'
           - pypy-3.9
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-22.04
             python-version: '3.8'
             coverage: true
             lint: true
