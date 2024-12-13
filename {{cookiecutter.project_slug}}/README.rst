@@ -28,7 +28,7 @@
   :alt: Python versions
 
 .. image:: https://img.shields.io/pypi/dm/{{cookiecutter.project_slug}}.svg
-  :target: https://pypi.org/project/{{cookiecutter.project_slug}}
+  :target: https://pypistats.org/packages/{{cookiecutter.project_slug}}
 
 .. image:: https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg
   :alt: Hatch project
