@@ -81,6 +81,7 @@ python = [
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
 testpaths = [
     "{{cookiecutter.project_package}}",
     "tests",
@@ -139,6 +140,12 @@ follow_imports = "silent"
 strict_optional = true
 warn_redundant_casts = true
 check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = [
+    "pytest",
+]
+ignore_missing_imports = true
 
 [tool.hatch.envs.lint]
 python = "{{ cookiecutter.python_ci }}"
