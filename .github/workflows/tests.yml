@@ -17,17 +17,16 @@ jobs:
         os:
           - ubuntu-22.04
         python-version:
-          - '3.9'
           - '3.10'
           - '3.11'
           - pypy-3.9
         include:
           - os: ubuntu-22.04
-            python-version: '3.8'
+            python-version: '3.9'
             coverage: true
             lint: true
           - os: macOS-latest
-            python-version: '3.8'
+            python-version: '3.9'
 
     runs-on: ${{ matrix.os }}
 
