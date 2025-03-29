@@ -12,6 +12,7 @@
   ],
   "docs": "https://github.com/aioworkers/{{ cookiecutter.project_slug }}#readme",
   "git_branch": ["main", "master"],
+  "codecov": true,
   "author_name": "Your name",
   "author_email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
   "python_ci": "3.9",

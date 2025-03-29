@@ -34,9 +34,9 @@ jobs:
     runs-on: ${{ '{{' }} matrix.os }}
 
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v4
       - name: Set up Python ${{ '{{' }} matrix.python-version }}
-        uses: actions/setup-python@v5.3.0
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ '{{' }} matrix.python-version }}
       - name: Install dependencies
@@ -45,11 +45,11 @@ jobs:
       - name: ruff
         if: ${{ '{{' }} matrix.lint }}
         run: |
-          hatch run lint:style {{cookiecutter.project_package}} tests
+          hatch run lint:style
       - name: mypy
         if: ${{ '{{' }} matrix.lint }}
         run: |
-          hatch run lint:mypy {{cookiecutter.project_package}} tests
+          hatch run lint:typing
       - name: Tests with coverage
         run: |
           hatch run cov
@@ -57,12 +57,14 @@ jobs:
         if: ${{ '{{' }} matrix.coverage }}
         run: |
           hatch run coverage xml
+      {%- if cookiecutter.codecov == 'True' %}
       - name: Upload coverage to Codecov
-        if: ${{ '{{' }} matrix.coverage }}
-        uses: codecov/codecov-action@v5.1.1
+        if: ${{ '{{' }} matrix.coverage && github.ref == 'refs/heads/{{cookiecutter.git_branch}}' }}
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ '{{' }} secrets.CODECOV_TOKEN }}
           file: ./coverage.xml
           flags: unittests
           name: codecov-umbrella
           fail_ci_if_error: true
+      {%- endif %}

@@ -29,20 +29,20 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-    "aioworkers>=0.27.0",
+    "aioworkers>=0.28.0",
 ]
 [project.optional-dependencies]
 dev-test = [
-    "aioworkers==0.27.0",
-    "coverage[toml]==7.6.9",
-    "pytest==8.3.4",
-    "pytest-aioworkers[asyncio]==0.4.0",
+    "aioworkers==0.28.0",
+    "coverage[toml]==7.7.1",
+    "pytest==8.3.5",
+    "pytest-aioworkers[asyncio]==0.5.0",
     "pytest-mock==3.14.0",
     "pyyaml==6.0.2",
 ]
 dev-lint = [
-    "ruff==0.8.3",
-    "mypy==1.13.0",
+    "ruff==0.11.2",
+    "mypy==1.15.0",
 ]
 
 [project.entry-points.aioworkers]
