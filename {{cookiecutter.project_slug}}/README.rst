@@ -7,11 +7,12 @@
 .. image:: https://github.com/aioworkers/{{cookiecutter.project_slug}}/workflows/Tests/badge.svg
   :target: https://github.com/aioworkers/{{cookiecutter.project_slug}}/actions?query=workflow%3ATests
 
-{%- if cookiecutter.codecov == 'True' %}
+{% if cookiecutter.codecov == 'True' -%}
 .. image:: https://codecov.io/gh/aioworkers/{{cookiecutter.project_slug}}/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/aioworkers/{{cookiecutter.project_slug}}
   :alt: Coverage
-{% endif %}
+
+{% endif -%}
 
 .. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v0.json
   :target: https://github.com/charliermarsh/ruff
